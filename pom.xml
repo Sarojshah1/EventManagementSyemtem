@@ -30,4 +30,5 @@
         <maven.compiler.target>19</maven.compiler.target>
         <exec.mainClass>com.mycompany.eventmanagementsyemtem.EventManagementSyemtem</exec.mainClass>
     </properties>
+    <name>EventManagementSyemtem</name>
 </project>

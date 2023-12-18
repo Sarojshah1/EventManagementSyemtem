@@ -2,6 +2,7 @@
 package Model;
 
 public class AuthModel {
+    
 
     public String getFull_Name() {
         return Full_Name;
