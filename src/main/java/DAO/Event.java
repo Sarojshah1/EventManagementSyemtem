@@ -15,7 +15,7 @@ public class Event extends DatabaseConnection {
         this.userid = userid;
     }
 private int userid;
-    public void CreateEvent(EventsModel event, UserId id) {
+    public void CreateEvent(EventsModel event) {
         String query = "INSERT INTO events(IMAGE,NAME,PRICE,DESCRIPTION,PLACE,CAPACITY,ISPUBLIC,USERID,VENUEID,date) VALUES('" + Arrays.toString(event.getImage()) + "','" + event.getEvent_name() + "','" + event.getPrice() + "','" + event.getDescription() + "','" + event.getVanue() + "','" + event.getCapacity() + "','" + 0 + "'," + userid + "','" + 1 + "','" + event.getDate() + "')";
         manipulate(query);
 

@@ -2,6 +2,7 @@
 package ViewComponent;
 
 import Controller.AdminDashboardController;
+import DAO.Event;
 import Model.EventsModel;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -254,6 +255,8 @@ public class HostEvent extends javax.swing.JPanel {
         Image img = icon.getImage();
         byte[] imageBytes = convertImageToByteArray(img);
         EventsModel event=new EventsModel(EventName.getText(),Descrition.getText(), Integer.parseInt(price.getText()),venue.getText(),Integer.parseInt(capacity.getText()),LocalDate.parse(date.getText(), dateFormatter),imageBytes);
+        Event cre=new Event();
+        cre.CreateEvent(event);
     } catch (NumberFormatException e) {
         // Handle the case where the input for price is not a valid integer
         System.err.println("Invalid price input: " + e.getMessage());
