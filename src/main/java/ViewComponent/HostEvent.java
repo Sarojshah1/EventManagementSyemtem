@@ -4,12 +4,17 @@
  */
 package ViewComponent;
 
+import java.awt.Image;
+import java.io.File;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+
 /**
  *
  * @author Lenovo
  */
 public class HostEvent extends javax.swing.JPanel {
-
+ String filename=null;
     /**
      * Creates new form HomeScreen
      */
@@ -26,29 +31,221 @@ public class HostEvent extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        calenderCustom1 = new calander.CalenderCustom();
+        customJPanel3 = new com.mycompany.custombutton.CustomJPanel();
+        jLabel2 = new javax.swing.JLabel();
+        textField1 = new com.mycompany.custombutton.TextField();
+        textField2 = new com.mycompany.custombutton.TextField();
+        textField3 = new com.mycompany.custombutton.TextField();
+        textField4 = new com.mycompany.custombutton.TextField();
+        textField5 = new com.mycompany.custombutton.TextField();
+        textField6 = new com.mycompany.custombutton.TextField();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
+        customButton1 = new com.mycompany.custombutton.CustomButton();
+        image = new javax.swing.JLabel();
+        createEvent = new com.mycompany.custombutton.CustomButton();
+        customJPanel4 = new com.mycompany.custombutton.CustomJPanel();
+        jLabel3 = new javax.swing.JLabel();
+
+        customJPanel3.setBackground(new java.awt.Color(153, 255, 255));
+        customJPanel3.setRoundBottomLeft(30);
+        customJPanel3.setRoundBottomRight(30);
+        customJPanel3.setRoundTopLeft(30);
+        customJPanel3.setRoundTopRight(30);
+
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel2.setText("ADD VENUES");
+
+        javax.swing.GroupLayout customJPanel3Layout = new javax.swing.GroupLayout(customJPanel3);
+        customJPanel3.setLayout(customJPanel3Layout);
+        customJPanel3Layout.setHorizontalGroup(
+            customJPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(customJPanel3Layout.createSequentialGroup()
+                .addGap(285, 285, 285)
+                .addComponent(jLabel2)
+                .addContainerGap(227, Short.MAX_VALUE))
+        );
+        customJPanel3Layout.setVerticalGroup(
+            customJPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(customJPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         setBackground(new java.awt.Color(255, 255, 255));
+
+        textField1.setLabelText("Price");
+
+        textField2.setLabelText("Description");
+
+        textField3.setLabelText("Event Name");
+
+        textField4.setLabelText("Event Date(yyyy-mm-dd)");
+
+        textField5.setLabelText("Capacity");
+
+        textField6.setLabelText("Venue ");
+        textField6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textField6ActionPerformed(evt);
+            }
+        });
+
+        jLayeredPane1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(153, 255, 255), new java.awt.Color(204, 255, 255), null, null));
+
+        customButton1.setText("Select Image");
+        customButton1.setcolor(new java.awt.Color(153, 255, 255));
+        customButton1.setColorBorder(new java.awt.Color(204, 255, 255));
+        customButton1.setContentAreaFilled(true);
+        customButton1.setOver(true);
+        customButton1.setRadius(100);
+        customButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                customButton1ActionPerformed(evt);
+            }
+        });
+
+        jLayeredPane1.setLayer(customButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(image, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
+        jLayeredPane1.setLayout(jLayeredPane1Layout);
+        jLayeredPane1Layout.setHorizontalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
+                .addContainerGap(244, Short.MAX_VALUE)
+                .addComponent(customButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(image, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(15, 15, 15))
+        );
+        jLayeredPane1Layout.setVerticalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(image, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(customButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        createEvent.setForeground(new java.awt.Color(255, 255, 255));
+        createEvent.setText("Host Event");
+        createEvent.setcolor(new java.awt.Color(255, 51, 51));
+        createEvent.setColorBorder(new java.awt.Color(255, 0, 102));
+        createEvent.setColorClick(new java.awt.Color(51, 255, 0));
+        createEvent.setColorOver(new java.awt.Color(153, 255, 0));
+        createEvent.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        createEvent.setRadius(40);
+
+        customJPanel4.setBackground(new java.awt.Color(153, 255, 255));
+        customJPanel4.setRoundBottomLeft(30);
+        customJPanel4.setRoundBottomRight(30);
+        customJPanel4.setRoundTopLeft(30);
+        customJPanel4.setRoundTopRight(30);
+
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel3.setText("Host Event");
+
+        javax.swing.GroupLayout customJPanel4Layout = new javax.swing.GroupLayout(customJPanel4);
+        customJPanel4.setLayout(customJPanel4Layout);
+        customJPanel4Layout.setHorizontalGroup(
+            customJPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(customJPanel4Layout.createSequentialGroup()
+                .addGap(377, 377, 377)
+                .addComponent(jLabel3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        customJPanel4Layout.setVerticalGroup(
+            customJPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, customJPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(calenderCustom1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(37, 37, 37)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textField6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(textField5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(textField4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(textField3, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textField2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(textField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(148, 148, 148)
+                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(createEvent, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(289, 289, 289))
+            .addComponent(customJPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(calenderCustom1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(customJPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                        .addComponent(textField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(textField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(textField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(textField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(textField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(createEvent, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void textField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textField6ActionPerformed
+
+    private void customButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customButton1ActionPerformed
+        // TODO add your handling code here:
+        JFileChooser chooser=new JFileChooser();
+        chooser.showOpenDialog(null);
+        File f=chooser.getSelectedFile();
+        filename=f.getAbsolutePath();
+        ImageIcon imageicon =new ImageIcon(filename);
+        Image img=imageicon.getImage().getScaledInstance(200, 200, Image.SCALE_SMOOTH);
+
+        image.setIcon(new ImageIcon(img));
+    }//GEN-LAST:event_customButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private calander.CalenderCustom calenderCustom1;
+    private com.mycompany.custombutton.CustomButton createEvent;
+    private com.mycompany.custombutton.CustomButton customButton1;
+    private com.mycompany.custombutton.CustomJPanel customJPanel3;
+    private com.mycompany.custombutton.CustomJPanel customJPanel4;
+    private javax.swing.JLabel image;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLayeredPane jLayeredPane1;
+    private com.mycompany.custombutton.TextField textField1;
+    private com.mycompany.custombutton.TextField textField2;
+    private com.mycompany.custombutton.TextField textField3;
+    private com.mycompany.custombutton.TextField textField4;
+    private com.mycompany.custombutton.TextField textField5;
+    private com.mycompany.custombutton.TextField textField6;
     // End of variables declaration//GEN-END:variables
 }
