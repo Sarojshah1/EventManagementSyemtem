@@ -33,12 +33,12 @@ public class HostEvent extends javax.swing.JPanel {
 
         customJPanel3 = new com.mycompany.custombutton.CustomJPanel();
         jLabel2 = new javax.swing.JLabel();
-        textField1 = new com.mycompany.custombutton.TextField();
-        textField2 = new com.mycompany.custombutton.TextField();
-        textField3 = new com.mycompany.custombutton.TextField();
-        textField4 = new com.mycompany.custombutton.TextField();
-        textField5 = new com.mycompany.custombutton.TextField();
-        textField6 = new com.mycompany.custombutton.TextField();
+        price = new com.mycompany.custombutton.TextField();
+        Descrition = new com.mycompany.custombutton.TextField();
+        EventName = new com.mycompany.custombutton.TextField();
+        date = new com.mycompany.custombutton.TextField();
+        capacity = new com.mycompany.custombutton.TextField();
+        venue = new com.mycompany.custombutton.TextField();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         customButton1 = new com.mycompany.custombutton.CustomButton();
         image = new javax.swing.JLabel();
@@ -74,20 +74,20 @@ public class HostEvent extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        textField1.setLabelText("Price");
+        price.setLabelText("Price");
 
-        textField2.setLabelText("Description");
+        Descrition.setLabelText("Description");
 
-        textField3.setLabelText("Event Name");
+        EventName.setLabelText("Event Name");
 
-        textField4.setLabelText("Event Date(yyyy-mm-dd)");
+        date.setLabelText("Event Date(yyyy-mm-dd)");
 
-        textField5.setLabelText("Capacity");
+        capacity.setLabelText("Capacity");
 
-        textField6.setLabelText("Venue ");
-        textField6.addActionListener(new java.awt.event.ActionListener() {
+        venue.setLabelText("Venue ");
+        venue.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textField6ActionPerformed(evt);
+                venueActionPerformed(evt);
             }
         });
 
@@ -172,12 +172,12 @@ public class HostEvent extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textField6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(textField5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(textField4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(textField3, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textField2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(textField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(venue, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(capacity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(EventName, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Descrition, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(price, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(148, 148, 148)
                 .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40))
@@ -194,17 +194,17 @@ public class HostEvent extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                        .addComponent(textField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(EventName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(textField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Descrition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(textField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(venue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(textField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(capacity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(textField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(43, 43, 43))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(56, 56, 56)
@@ -215,9 +215,9 @@ public class HostEvent extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField6ActionPerformed
+    private void venueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_venueActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textField6ActionPerformed
+    }//GEN-LAST:event_venueActionPerformed
 
     private void customButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customButton1ActionPerformed
         // TODO add your handling code here:
@@ -233,19 +233,19 @@ public class HostEvent extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.mycompany.custombutton.TextField Descrition;
+    private com.mycompany.custombutton.TextField EventName;
+    private com.mycompany.custombutton.TextField capacity;
     private com.mycompany.custombutton.CustomButton createEvent;
     private com.mycompany.custombutton.CustomButton customButton1;
     private com.mycompany.custombutton.CustomJPanel customJPanel3;
     private com.mycompany.custombutton.CustomJPanel customJPanel4;
+    private com.mycompany.custombutton.TextField date;
     private javax.swing.JLabel image;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLayeredPane jLayeredPane1;
-    private com.mycompany.custombutton.TextField textField1;
-    private com.mycompany.custombutton.TextField textField2;
-    private com.mycompany.custombutton.TextField textField3;
-    private com.mycompany.custombutton.TextField textField4;
-    private com.mycompany.custombutton.TextField textField5;
-    private com.mycompany.custombutton.TextField textField6;
+    private com.mycompany.custombutton.TextField price;
+    private com.mycompany.custombutton.TextField venue;
     // End of variables declaration//GEN-END:variables
 }

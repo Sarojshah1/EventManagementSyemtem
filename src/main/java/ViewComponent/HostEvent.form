@@ -68,12 +68,12 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="textField6" alignment="0" max="32767" attributes="0"/>
-                  <Component id="textField5" alignment="0" max="32767" attributes="0"/>
-                  <Component id="textField4" alignment="0" max="32767" attributes="0"/>
-                  <Component id="textField3" min="-2" pref="364" max="-2" attributes="0"/>
-                  <Component id="textField2" alignment="0" max="32767" attributes="0"/>
-                  <Component id="textField1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="venue" alignment="0" max="32767" attributes="0"/>
+                  <Component id="capacity" alignment="0" max="32767" attributes="0"/>
+                  <Component id="date" alignment="0" max="32767" attributes="0"/>
+                  <Component id="EventName" min="-2" pref="364" max="-2" attributes="0"/>
+                  <Component id="Descrition" alignment="0" max="32767" attributes="0"/>
+                  <Component id="price" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
               <Component id="jLayeredPane1" min="-2" max="-2" attributes="0"/>
@@ -94,17 +94,17 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace pref="27" max="32767" attributes="0"/>
-                      <Component id="textField3" min="-2" max="-2" attributes="0"/>
+                      <Component id="EventName" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="textField2" min="-2" max="-2" attributes="0"/>
+                      <Component id="Descrition" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="textField1" min="-2" max="-2" attributes="0"/>
+                      <Component id="price" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="textField6" min="-2" max="-2" attributes="0"/>
+                      <Component id="venue" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="textField5" min="-2" max="-2" attributes="0"/>
+                      <Component id="capacity" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="textField4" min="-2" max="-2" attributes="0"/>
+                      <Component id="date" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -120,37 +120,37 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="com.mycompany.custombutton.TextField" name="textField1">
+    <Component class="com.mycompany.custombutton.TextField" name="price">
       <Properties>
         <Property name="labelText" type="java.lang.String" value="Price"/>
       </Properties>
     </Component>
-    <Component class="com.mycompany.custombutton.TextField" name="textField2">
+    <Component class="com.mycompany.custombutton.TextField" name="Descrition">
       <Properties>
         <Property name="labelText" type="java.lang.String" value="Description"/>
       </Properties>
     </Component>
-    <Component class="com.mycompany.custombutton.TextField" name="textField3">
+    <Component class="com.mycompany.custombutton.TextField" name="EventName">
       <Properties>
         <Property name="labelText" type="java.lang.String" value="Event Name"/>
       </Properties>
     </Component>
-    <Component class="com.mycompany.custombutton.TextField" name="textField4">
+    <Component class="com.mycompany.custombutton.TextField" name="date">
       <Properties>
         <Property name="labelText" type="java.lang.String" value="Event Date(yyyy-mm-dd)"/>
       </Properties>
     </Component>
-    <Component class="com.mycompany.custombutton.TextField" name="textField5">
+    <Component class="com.mycompany.custombutton.TextField" name="capacity">
       <Properties>
         <Property name="labelText" type="java.lang.String" value="Capacity"/>
       </Properties>
     </Component>
-    <Component class="com.mycompany.custombutton.TextField" name="textField6">
+    <Component class="com.mycompany.custombutton.TextField" name="venue">
       <Properties>
         <Property name="labelText" type="java.lang.String" value="Venue "/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textField6ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="venueActionPerformed"/>
       </Events>
     </Component>
     <Container class="javax.swing.JLayeredPane" name="jLayeredPane1">
