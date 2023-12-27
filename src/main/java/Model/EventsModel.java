@@ -5,7 +5,7 @@ import java.time.LocalDate;
 
 
 public class EventsModel {
-
+   
     public String getEvent_name() {
         return event_name;
     }
