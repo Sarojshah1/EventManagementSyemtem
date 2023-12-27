@@ -44,7 +44,6 @@ public class AuthController extends DatabaseConnection  {
             dash.pack();
             dash.setLocationRelativeTo(null);
             System.out.println("Admin ID: " + adminId);
-            UserId id=new UserId( adminId);
         } else {
             // Query for User
             String userQuery = "SELECT * FROM credentials WHERE Email=? AND password=? AND role='User'";
@@ -60,7 +59,6 @@ public class AuthController extends DatabaseConnection  {
                 dash1.pack();
                 dash1.setLocationRelativeTo(null);
                 System.out.println("User ID: " + userId);
-                UserId id=new UserId( userId);
             } else {
                 System.out.println("Invalid credentials");
             }
