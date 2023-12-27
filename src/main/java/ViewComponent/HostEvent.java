@@ -4,8 +4,17 @@
  */
 package ViewComponent;
 
+import Controller.AdminDashboardController;
+import Model.EventsModel;
+import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 
@@ -15,6 +24,7 @@ import javax.swing.JFileChooser;
  */
 public class HostEvent extends javax.swing.JPanel {
  String filename=null;
+ DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     /**
      * Creates new form HomeScreen
      */
@@ -138,6 +148,11 @@ public class HostEvent extends javax.swing.JPanel {
         createEvent.setColorOver(new java.awt.Color(153, 255, 0));
         createEvent.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         createEvent.setRadius(40);
+        createEvent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createEventActionPerformed(evt);
+            }
+        });
 
         customJPanel4.setBackground(new java.awt.Color(153, 255, 255));
         customJPanel4.setRoundBottomLeft(30);
@@ -230,6 +245,62 @@ public class HostEvent extends javax.swing.JPanel {
 
         image.setIcon(new ImageIcon(img));
     }//GEN-LAST:event_customButton1ActionPerformed
+
+    private void createEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createEventActionPerformed
+        // TODO add your handling code here:
+        try {
+        // Your existing code here
+        int price1 = Integer.parseInt(price.getText());
+
+        // Convert ImageIcon to Image and then to byte array
+        ImageIcon icon = (ImageIcon) image.getIcon();
+        Image img = icon.getImage();
+        byte[] imageBytes = convertImageToByteArray(img);
+        EventsModel event=new EventsModel(EventName.getText(),Descrition.getText(), Integer.parseInt(price.getText()),venue.getText(),Integer.parseInt(capacity.getText()),LocalDate.parse(date.getText(), dateFormatter),imageBytes);
+    } catch (NumberFormatException e) {
+        // Handle the case where the input for price is not a valid integer
+        System.err.println("Invalid price input: " + e.getMessage());
+        // You might want to display an error message to the user
+    } catch (Exception e) {
+        // Handle other exceptions
+        e.printStackTrace();
+    }
+//    name.setText("");
+//    image.setText("");
+//    address.setText("");
+//    price.setText("");
+
+    }                                           
+    private byte[] convertImageToByteArray(Image image) {
+    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+    try {
+        // Assuming you have a BufferedImage, you can use ImageIO to write it to the ByteArrayOutputStream
+        BufferedImage bufferedImage = toBufferedImage(image);
+        ImageIO.write(bufferedImage, "png", baos);
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    return baos.toByteArray();
+}
+    private BufferedImage toBufferedImage(Image image) {
+    if (image instanceof BufferedImage) {
+        return (BufferedImage) image;
+    }
+
+    // Create a BufferedImage with transparency
+    BufferedImage bufferedImage = new BufferedImage(
+            image.getWidth(null),
+            image.getHeight(null),
+            BufferedImage.TYPE_INT_ARGB
+    );
+
+    // Draw the image onto the BufferedImage
+    Graphics2D bGr = bufferedImage.createGraphics();
+    bGr.drawImage(image, 0, 0, null);
+    bGr.dispose();
+
+    return bufferedImage;
+    }//GEN-LAST:event_createEventActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

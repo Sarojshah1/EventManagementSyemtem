@@ -1,13 +1,83 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Model;
 
-/**
- *
- * @author Lenovo
- */
+import java.time.LocalDate;
+
+
 public class EventsModel {
+
+    public String getEvent_name() {
+        return event_name;
+    }
+
+    public void setEvent_name(String event_name) {
+        this.event_name = event_name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public String getVanue() {
+        return vanue;
+    }
+
+    public void setVanue(String vanue) {
+        this.vanue = vanue;
+    }
+
+    public int getCapacity() {
+        return Capacity;
+    }
+
+    public void setCapacity(int Capacity) {
+        this.Capacity = Capacity;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
+    private byte[] image;
+    private String event_name;
+    private String description;
+    private int price;
+    private String vanue;
+    private int Capacity;
+    private LocalDate date;
+    public EventsModel(String Eventname, String description, int price, String vanue, int Capacity, LocalDate date, byte[] image){
+        this.event_name=Eventname;
+        this.description=description;
+        this.price=price;
+        this.vanue=vanue;
+        this.Capacity=Capacity;
+        this.date=date;
+        this.image=image;
+        
+    }
+    
     
 }

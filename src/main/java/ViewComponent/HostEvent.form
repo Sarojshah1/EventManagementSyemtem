@@ -236,6 +236,9 @@
         </Property>
         <Property name="radius" type="int" value="40"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="createEventActionPerformed"/>
+      </Events>
     </Component>
     <Container class="com.mycompany.custombutton.CustomJPanel" name="customJPanel4">
       <Properties>
