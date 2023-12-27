@@ -242,7 +242,7 @@ public class LoginPage extends javax.swing.JFrame {
         auth.setEmail(Email.getText());
         auth.setPassword(Password.getText());
         AuthController controller=new AuthController();
-        controller.LoginMethod(auth.getEmail(), auth.getPassword());
+        controller.loginMethod(auth.getEmail(), auth.getPassword());
         this.dispose();
 
     }//GEN-LAST:event_LogInActionPerformed

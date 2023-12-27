@@ -16,6 +16,7 @@ C:\Users\Lenovo\OneDrive - Softwarica College\Documents\NetBeansProjects\EventMa
 C:\Users\Lenovo\OneDrive - Softwarica College\Documents\NetBeansProjects\EventManagementSyemtem\src\main\java\com\mycompany\custombutton\shadowPanel\GraphicsUtilities.java
 C:\Users\Lenovo\OneDrive - Softwarica College\Documents\NetBeansProjects\EventManagementSyemtem\src\main\java\com\mycompany\custombutton\shadowPanel\PanelRounded.java
 C:\Users\Lenovo\OneDrive - Softwarica College\Documents\NetBeansProjects\EventManagementSyemtem\src\main\java\View\Dashboard.java
+C:\Users\Lenovo\OneDrive - Softwarica College\Documents\NetBeansProjects\EventManagementSyemtem\src\main\java\ViewComponent\Home_Screen.java
 C:\Users\Lenovo\OneDrive - Softwarica College\Documents\NetBeansProjects\EventManagementSyemtem\src\main\java\ViewComponent\venuedetails.java
 C:\Users\Lenovo\OneDrive - Softwarica College\Documents\NetBeansProjects\EventManagementSyemtem\src\main\java\spline\Spline.java
 C:\Users\Lenovo\OneDrive - Softwarica College\Documents\NetBeansProjects\EventManagementSyemtem\src\main\java\Menu\MenuEvent.java
@@ -27,7 +28,6 @@ C:\Users\Lenovo\OneDrive - Softwarica College\Documents\NetBeansProjects\EventMa
 C:\Users\Lenovo\OneDrive - Softwarica College\Documents\NetBeansProjects\EventManagementSyemtem\src\main\java\com\mycompany\custombutton\shadowPanel\ShadowRenderer.java
 C:\Users\Lenovo\OneDrive - Softwarica College\Documents\NetBeansProjects\EventManagementSyemtem\src\main\java\Shadow\GraphicsUtilities.java
 C:\Users\Lenovo\OneDrive - Softwarica College\Documents\NetBeansProjects\EventManagementSyemtem\src\main\java\Chart\LegendItem.java
-C:\Users\Lenovo\OneDrive - Softwarica College\Documents\NetBeansProjects\EventManagementSyemtem\src\main\java\calander\Home_Screen.java
 C:\Users\Lenovo\OneDrive - Softwarica College\Documents\NetBeansProjects\EventManagementSyemtem\src\main\java\com\mycompany\custombutton\CustomButton.java
 C:\Users\Lenovo\OneDrive - Softwarica College\Documents\NetBeansProjects\EventManagementSyemtem\src\main\java\blankchart\SeriesSize.java
 C:\Users\Lenovo\OneDrive - Softwarica College\Documents\NetBeansProjects\EventManagementSyemtem\src\main\java\ViewComponent\DefaultForm.java
@@ -39,6 +39,7 @@ C:\Users\Lenovo\OneDrive - Softwarica College\Documents\NetBeansProjects\EventMa
 C:\Users\Lenovo\OneDrive - Softwarica College\Documents\NetBeansProjects\EventManagementSyemtem\src\main\java\com\mycompany\custombutton\ProgressBar.java
 C:\Users\Lenovo\OneDrive - Softwarica College\Documents\NetBeansProjects\EventManagementSyemtem\src\main\java\ViewComponent\HomeForm.java
 C:\Users\Lenovo\OneDrive - Softwarica College\Documents\NetBeansProjects\EventManagementSyemtem\src\main\java\Chart\CurveLineChart.java
+C:\Users\Lenovo\OneDrive - Softwarica College\Documents\NetBeansProjects\EventManagementSyemtem\src\main\java\ViewComponent\HostEvent.java
 C:\Users\Lenovo\OneDrive - Softwarica College\Documents\NetBeansProjects\EventManagementSyemtem\src\main\java\Controller\AdminDashboardController.java
 C:\Users\Lenovo\OneDrive - Softwarica College\Documents\NetBeansProjects\EventManagementSyemtem\src\main\java\ViewComponent\AddVenue.java
 C:\Users\Lenovo\OneDrive - Softwarica College\Documents\NetBeansProjects\EventManagementSyemtem\src\main\java\Shadow\ShadowRenderer_1.java
@@ -61,4 +62,3 @@ C:\Users\Lenovo\OneDrive - Softwarica College\Documents\NetBeansProjects\EventMa
 C:\Users\Lenovo\OneDrive - Softwarica College\Documents\NetBeansProjects\EventManagementSyemtem\src\main\java\Model\AuthModel.java
 C:\Users\Lenovo\OneDrive - Softwarica College\Documents\NetBeansProjects\EventManagementSyemtem\src\main\java\scrollbar\ModernScrollBarUI.java
 C:\Users\Lenovo\OneDrive - Softwarica College\Documents\NetBeansProjects\EventManagementSyemtem\src\main\java\Shadow\GraphicsUtilities_1.java
-C:\Users\Lenovo\OneDrive - Softwarica College\Documents\NetBeansProjects\EventManagementSyemtem\src\main\java\calander\HostEvent.java
