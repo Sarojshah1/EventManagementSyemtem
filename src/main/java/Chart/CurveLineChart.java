@@ -86,7 +86,7 @@ public class CurveLineChart extends JComponent {
                 repaint();
             }
         };
-        animator = new Animator(1500, target);
+        animator = new Animator(0, target);
         animator.setResolution(5);
         animator.setAcceleration(0.5f);
         animator.setDeceleration(0.5f);

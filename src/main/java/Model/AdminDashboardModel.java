@@ -4,6 +4,8 @@ package Model;
 public class AdminDashboardModel {
 
     public AdminDashboardModel(String month1, int event) {
+        this.month=month1;
+        this.Event=event;
     }
     String month;
 
