@@ -19,8 +19,8 @@ public class UserDashboard extends javax.swing.JFrame {
             public void selected(int index, int subIndex) {
               
                 switch (index){
-                 
-                    case 1 -> showForm(new Home_Screen());
+                    
+                    case 0 -> showForm(new Home_Screen());
                     case 2 -> showForm(new HostEvent());
                     default -> showForm(new DefaultForm("Form : " + index + " " + subIndex));
                 
