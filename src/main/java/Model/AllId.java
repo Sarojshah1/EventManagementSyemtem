@@ -9,5 +9,6 @@ package Model;
  * @author Lenovo
  */
 public class AllId {
-    public static int userId; 
+    public static int userId;
+    public static int EventId;
 }

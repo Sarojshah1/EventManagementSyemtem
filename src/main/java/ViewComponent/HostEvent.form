@@ -65,25 +65,28 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="capacity" min="-2" pref="338" max="-2" attributes="0"/>
-                  <Component id="venue" alignment="0" min="-2" pref="338" max="-2" attributes="0"/>
-                  <Component id="price" alignment="0" min="-2" pref="338" max="-2" attributes="0"/>
-                  <Component id="Descrition" alignment="0" min="-2" pref="338" max="-2" attributes="0"/>
-                  <Component id="EventName" alignment="0" max="32767" attributes="0"/>
-                  <Component id="date" min="-2" pref="338" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
-              <Component id="jLayeredPane1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-          </Group>
           <Component id="customJPanel4" alignment="0" max="32767" attributes="0"/>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
-              <Component id="createEvent" min="-2" pref="447" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="capacity" min="-2" pref="338" max="-2" attributes="0"/>
+                          <Component id="venue" alignment="0" min="-2" pref="338" max="-2" attributes="0"/>
+                          <Component id="price" alignment="0" min="-2" pref="338" max="-2" attributes="0"/>
+                          <Component id="Descrition" alignment="0" min="-2" pref="338" max="-2" attributes="0"/>
+                          <Component id="EventName" alignment="0" min="-2" pref="338" max="-2" attributes="0"/>
+                          <Component id="date" min="-2" pref="338" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
+                      <Component id="jLayeredPane1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
+                      <Component id="createEvent" min="-2" pref="447" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace min="40" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
