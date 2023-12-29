@@ -254,7 +254,7 @@ public class CurveLineChart extends JComponent {
             double x = (s.getX() - r2.getWidth() / 2) - space;
             double y = s.getY() + fm.getAscent() - r2.getHeight() - h - 13;
             g2.translate(x, y);
-            g2.setColor(new Color(255, 255, 255, 100));
+            g2.setColor(new Color(0, 0, 0, 100));
             g2.fill(new RoundRectangle2D.Double(0, 0, w, h, 5, 5));
             g2.setColor(new Color(200, 200, 200, 100));
             g2.draw(new RoundRectangle2D.Double(0, 0, w, h, 5, 5));

@@ -24,6 +24,7 @@ public class HomeForm extends javax.swing.JPanel {
         chart.setTitle("Events Report");
         chart.addLegend("Event",Color.decode("#7b4397"),Color.decode("#dc2430"));
         setData();
+        Data();
     }
   private void setData() {
     DatabaseConnection connection = new DatabaseConnection();
@@ -58,10 +59,71 @@ public class HomeForm extends javax.swing.JPanel {
 
 }
   
-  private void Data(){
-      DatabaseConnection connection = new DatabaseConnection();
+  private void Data() {
+    DatabaseConnection connection = new DatabaseConnection();
+    String sql = "SELECT COUNT(ID) AS total_event FROM events ";
+    String query = "SELECT COUNT(ID) AS total_venue FROM venues ";
+    String query1 = "SELECT COUNT(ID) AS total_booking FROM eventticket ";
+
+    try {
+        ResultSet resultSet = connection.retrive(sql);
+        
+
+        // Check if the result set is not empty
+        if (resultSet.next()) {
+            String event = resultSet.getString("total_event");
+            Total_Event.setText(event);
+            
+        } else {
+            // Handle the case where the result set is empty
+            Total_Event.setText("0"); 
+        }
+
+    } catch (SQLException ex) {
+        Logger.getLogger(AdminDashboardController.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    try {
+
+        ResultSet result = connection.retrive(query);
+//        ResultSet result1=connection.retrive(query1);
+
+        // Check if the result set is not empty
+        if (result.next()) {
+
+            String venue = result.getString("total_venue");
+            Venue.setText(venue);
+            
+        } else {
+            Venue.setText("0");
+
+        }
+
+    } catch (SQLException ex) {
+        Logger.getLogger(AdminDashboardController.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    try {
       
-  }
+        ResultSet result1=connection.retrive(query1);
+
+        // Check if the result set is not empty
+        if (result1.next()) {
+
+            String booking = result1.getString("total_booking");
+
+            Booking.setText(booking);
+            
+        } else {
+            // Handle the case where the result set is empty
+
+            Booking.setText("0");// or any default value
+        }
+
+    } catch (SQLException ex) {
+        Logger.getLogger(AdminDashboardController.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    
+}
+
 
 
     @SuppressWarnings("unchecked")
@@ -70,13 +132,13 @@ public class HomeForm extends javax.swing.JPanel {
 
         customJPanel1 = new com.mycompany.custombutton.CustomJPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        Total_Event = new javax.swing.JLabel();
         customJPanel2 = new com.mycompany.custombutton.CustomJPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        Booking = new javax.swing.JLabel();
         customJPanel3 = new com.mycompany.custombutton.CustomJPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        Venue = new javax.swing.JLabel();
         customJPanel5 = new com.mycompany.custombutton.CustomJPanel();
         jLabel4 = new javax.swing.JLabel();
         panelShadow1 = new panel.PanelShadow();
@@ -93,9 +155,9 @@ public class HomeForm extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel2.setText("Total Events");
 
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("0");
+        Total_Event.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        Total_Event.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Total_Event.setText("0");
 
         javax.swing.GroupLayout customJPanel1Layout = new javax.swing.GroupLayout(customJPanel1);
         customJPanel1.setLayout(customJPanel1Layout);
@@ -104,7 +166,7 @@ public class HomeForm extends javax.swing.JPanel {
             .addGroup(customJPanel1Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addGroup(customJPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Total_Event, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addContainerGap(71, Short.MAX_VALUE))
         );
@@ -114,7 +176,7 @@ public class HomeForm extends javax.swing.JPanel {
                 .addGap(20, 20, 20)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Total_Event, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
@@ -127,9 +189,9 @@ public class HomeForm extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel1.setText("Total Bookings");
 
-        jLabel7.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("0");
+        Booking.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        Booking.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Booking.setText("0");
 
         javax.swing.GroupLayout customJPanel2Layout = new javax.swing.GroupLayout(customJPanel2);
         customJPanel2.setLayout(customJPanel2Layout);
@@ -140,7 +202,7 @@ public class HomeForm extends javax.swing.JPanel {
                 .addGroup(customJPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(customJPanel2Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Booking, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel1))
                 .addContainerGap(46, Short.MAX_VALUE))
         );
@@ -150,7 +212,7 @@ public class HomeForm extends javax.swing.JPanel {
                 .addGap(20, 20, 20)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Booking, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
@@ -163,9 +225,9 @@ public class HomeForm extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel3.setText("Total Venues");
 
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("0");
+        Venue.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        Venue.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Venue.setText("0");
 
         javax.swing.GroupLayout customJPanel3Layout = new javax.swing.GroupLayout(customJPanel3);
         customJPanel3.setLayout(customJPanel3Layout);
@@ -176,7 +238,7 @@ public class HomeForm extends javax.swing.JPanel {
                 .addGroup(customJPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(customJPanel3Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Venue, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel3))
                 .addContainerGap(65, Short.MAX_VALUE))
         );
@@ -186,7 +248,7 @@ public class HomeForm extends javax.swing.JPanel {
                 .addGap(20, 20, 20)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Venue, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
@@ -270,6 +332,9 @@ public class HomeForm extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Booking;
+    private javax.swing.JLabel Total_Event;
+    private javax.swing.JLabel Venue;
     private Chart.CurveLineChart chart;
     private com.mycompany.custombutton.CustomJPanel customJPanel1;
     private com.mycompany.custombutton.CustomJPanel customJPanel2;
@@ -279,9 +344,6 @@ public class HomeForm extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private panel.PanelShadow panelShadow1;
     // End of variables declaration//GEN-END:variables
 }
