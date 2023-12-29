@@ -5,6 +5,11 @@ import java.time.LocalDate;
 
 
 public class EventsModel {
+
+    public EventsModel(int userid) {
+        this.userid=userid;
+        
+    }
    
     public String getEvent_name() {
         return event_name;
@@ -61,6 +66,13 @@ public class EventsModel {
     public void setImage(byte[] image) {
         this.image = image;
     }
+    public int getUserid() {
+        return userid;
+    }
+
+    public void setUserid(int userid) {
+        this.userid = userid;
+    }
     private byte[] image;
     private String event_name;
     private String description;
@@ -68,6 +80,7 @@ public class EventsModel {
     private String vanue;
     private int Capacity;
     private LocalDate date;
+    private int userid;
     public EventsModel(String Eventname, String description, int price, String vanue, int Capacity, LocalDate date, byte[] image){
         this.event_name=Eventname;
         this.description=description;

@@ -4,17 +4,27 @@
  */
 package ViewComponent;
 
-/**
- *
- * @author Lenovo
- */
+import Table.TableActionCellEditor;
+import Table.TableActionCellRender;
+import Table.TableActionEvent;
+import View.Payment;
+
 public class Home_Screen extends javax.swing.JPanel {
 
-    /**
-     * Creates new form Home_Screen
-     */
     public Home_Screen() {
         initComponents();
+        TableActionEvent event = new TableActionEvent(){
+            @Override
+            public void onClick(int row) {
+                System.out.println("Edit row : " + row);
+                Payment pay = new Payment();
+                pay.setVisible(true);
+                
+            }
+            
+        };
+        table.getColumnModel().getColumn(7).setCellRenderer(new TableActionCellRender());
+        table.getColumnModel().getColumn(7).setCellEditor(new TableActionCellEditor(event));
     }
 
     /**
@@ -28,8 +38,7 @@ public class Home_Screen extends javax.swing.JPanel {
 
         scrollBarCustom1 = new scrollbar.ScrollBarCustom();
         jScrollPane7 = new javax.swing.JScrollPane();
-        customJPanel1 = new com.mycompany.custombutton.CustomJPanel();
-        jPanel1 = new javax.swing.JPanel();
+        table = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(255, 255, 255));
         addPropertyChangeListener(new java.beans.PropertyChangeListener() {
@@ -42,31 +51,34 @@ public class Home_Screen extends javax.swing.JPanel {
         jScrollPane7.setColumnHeaderView(null);
         jScrollPane7.setVerticalScrollBar(scrollBarCustom1);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "No", "Image", "Event Name", "Description", "Venue", "Date", "Ticket Price", "Action"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, true
+            };
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 945, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 665, Short.MAX_VALUE)
-        );
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
-        javax.swing.GroupLayout customJPanel1Layout = new javax.swing.GroupLayout(customJPanel1);
-        customJPanel1.setLayout(customJPanel1Layout);
-        customJPanel1Layout.setHorizontalGroup(
-            customJPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        customJPanel1Layout.setVerticalGroup(
-            customJPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        jScrollPane7.setViewportView(customJPanel1);
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        table.setRowHeight(60);
+        jScrollPane7.setViewportView(table);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -86,9 +98,9 @@ public class Home_Screen extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.mycompany.custombutton.CustomJPanel customJPanel1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane7;
     private scrollbar.ScrollBarCustom scrollBarCustom1;
+    private javax.swing.JTable table;
     // End of variables declaration//GEN-END:variables
 }

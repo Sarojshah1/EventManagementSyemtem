@@ -12,6 +12,7 @@ import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.geom.Rectangle2D;
+import java.sql.Date;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import org.jdesktop.animation.timing.Animator;
@@ -164,6 +165,8 @@ public class TextField extends JTextField {
         }
         super.setText(string);
     }
+
+        
 }
 
 

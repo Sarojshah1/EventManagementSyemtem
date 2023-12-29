@@ -10,8 +10,8 @@ import java.awt.Component;
 
 public class UserDashboard extends javax.swing.JFrame {
 
-   
-    public UserDashboard() {
+    // make userid
+    public UserDashboard() { // ask for userid and pass in event
         initComponents();
         userMenu1.setEvent(new MenuEvent() {
             
@@ -19,8 +19,9 @@ public class UserDashboard extends javax.swing.JFrame {
             public void selected(int index, int subIndex) {
               
                 switch (index){
-                    case 0 -> showForm(new HostEvent());
+                 
                     case 1 -> showForm(new Home_Screen());
+                    case 2 -> showForm(new HostEvent());
                     default -> showForm(new DefaultForm("Form : " + index + " " + subIndex));
                 
                 }

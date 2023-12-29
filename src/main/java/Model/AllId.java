@@ -8,6 +8,6 @@ package Model;
  *
  * @author Lenovo
  */
-public class UserId {
-    
+public class AllId {
+    public static int userId; 
 }
