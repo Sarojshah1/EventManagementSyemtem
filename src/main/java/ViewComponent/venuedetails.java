@@ -4,18 +4,39 @@
  */
 package ViewComponent;
 
+import database.DatabaseConnection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Lenovo
  */
 public class venuedetails extends javax.swing.JPanel {
 
-    /**
-     * Creates new form venuedetails
-     */
+    private DefaultTableModel model;
+    private ResultSet result;
     public venuedetails() {
         initComponents();
+        init();
     }
+    private void init() {
+        DatabaseConnection conn = new DatabaseConnection();
+        model = (DefaultTableModel) table.getModel();
+        String query = "SELECT * FROM venues";
+        model.setRowCount(0);
+        try (ResultSet resultSet = conn.retrive(query)) {
+            while (resultSet.next()) {
+                int No = resultSet.getInt(1);
+                String name = resultSet.getString(2);
+                int price = resultSet.getInt(5);
+model.addRow(new Object[]{No, name, price});
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -29,7 +50,7 @@ public class venuedetails extends javax.swing.JPanel {
         customJPanel1 = new com.mycompany.custombutton.CustomJPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        table = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -59,7 +80,7 @@ public class venuedetails extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -70,7 +91,7 @@ public class venuedetails extends javax.swing.JPanel {
                 "ID", "Venue Name", "Price"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(table);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -98,6 +119,6 @@ public class venuedetails extends javax.swing.JPanel {
     private com.mycompany.custombutton.CustomJPanel customJPanel1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable table;
     // End of variables declaration//GEN-END:variables
 }

@@ -31,7 +31,6 @@ public class UserMenu extends JComponent{
     public UserMenu(){
         this.menuItems = new String[][]{
             {"Home"},
-            {"Book Event"},
             {"Host Event"},
             {"Tickets"},
             {"LogOut"}

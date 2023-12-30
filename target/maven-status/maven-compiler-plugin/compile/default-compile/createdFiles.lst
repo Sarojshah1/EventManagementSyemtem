@@ -145,6 +145,7 @@ calander\PanelDate.class
 calander\PanelDate$1.class
 combobox\Combobox$1.class
 database\DatabaseConnection.class
+DAO\ImageTableCellRenderer.class
 calander\PanelDate$14.class
 Effect\RippleEffect.class
 calander\PanelSlide$1.class
