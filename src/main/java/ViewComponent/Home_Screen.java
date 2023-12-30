@@ -8,10 +8,18 @@ import Table.TableActionCellEditor;
 import Table.TableActionCellRender;
 import Table.TableActionEvent;
 import View.Payment;
-//import database.DatabaseConnection;
-//import java.awt.Image;
-//import java.sql.Date;
+import database.DatabaseConnection;
+import java.awt.Component;
+import java.awt.Image;
+import java.sql.Blob;
+import java.sql.Date;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 public class Home_Screen extends javax.swing.JPanel {
@@ -33,33 +41,35 @@ public class Home_Screen extends javax.swing.JPanel {
         };
         table.getColumnModel().getColumn(7).setCellRenderer(new TableActionCellRender());
         table.getColumnModel().getColumn(7).setCellEditor(new TableActionCellEditor(event));
+        init();
     }
-//    private void init(){
-//        try{
-//            DatabaseConnection conn=new DatabaseConnection();
-//        model=(DefaultTableModel) table.getModel();
-//        String query="SELECT * FROM events";
-//        conn.retrive(query);
-//        while(conn.retrive(query).next()){
-//            int No=conn.retrive(query).getInt(0);
-//            Image image=(Image) conn.retrive(query).getBlob(1);
-//            String name=conn.retrive(query).getString(2);
-//            int price=conn.retrive(query).getInt(3);
-//            String decription=conn.retrive(query).getString(4);
-//            String venue=conn.retrive(query).getString(5);
-//            Date date=conn.retrive(query).getDate(9);
-//            model.addRow(new Object[]{table.getRowCount()+1,No,image,name,decription,venue,date,price});
-//            
-//            
-//            
-//            
-//        }
-//        }catch(Exception E){
-//            E.printStackTrace();
-//            
-//        }
-//        
-//    }
+    private void init() {
+        DatabaseConnection conn = new DatabaseConnection();
+        model = (DefaultTableModel) table.getModel();
+        String query = "SELECT * FROM events";
+        model.setRowCount(0);
+        try (ResultSet resultSet = conn.retrive(query)) {
+            while (resultSet.next()) {
+                int No = resultSet.getInt(1);
+                // Assuming that the second column is a BLOB containing an image
+                Blob blob = resultSet.getBlob(2);
+                byte[] imageBytes = blob.getBytes(1, (int) blob.length());
+                ImageIcon image = new ImageIcon(imageBytes);
+                String name = resultSet.getString(3);
+                int price = resultSet.getInt(4);
+                String description = resultSet.getString(5);
+                String venue = resultSet.getString(6);
+                Date date = resultSet.getDate(10);
+
+                // Add a custom renderer for the image column
+                table.getColumnModel().getColumn(1).setCellRenderer(new ImageTableCellRenderer());
+
+                model.addRow(new Object[]{No, image, name, description, venue, date, price});
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+}
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -132,4 +142,28 @@ public class Home_Screen extends javax.swing.JPanel {
     private scrollbar.ScrollBarCustom scrollBarCustom1;
     private javax.swing.JTable table;
     // End of variables declaration//GEN-END:variables
+}
+class ImageTableCellRenderer extends DefaultTableCellRenderer {
+    @Override
+    public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+        JLabel label = new JLabel();
+        label.setHorizontalAlignment(JLabel.CENTER);
+
+        // Set a border to make the cell's layout more visually appealing
+        label.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+
+        if (value instanceof ImageIcon) {
+            ImageIcon imageIcon = (ImageIcon) value;
+            label.setIcon(scaleImageIcon(imageIcon, 50, 50)); // Adjust the size as needed
+        }
+
+        return label;
+    }
+
+    // Helper method to scale ImageIcon
+    private ImageIcon scaleImageIcon(ImageIcon icon, int width, int height) {
+        Image image = icon.getImage();
+        Image scaledImage = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+        return new ImageIcon(scaledImage);
+    }
 }

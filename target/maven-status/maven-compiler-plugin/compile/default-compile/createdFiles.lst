@@ -136,6 +136,7 @@ combobox\Combobox$ComboUI$ArrowButton.class
 Controller\AuthController.class
 com\mycompany\custombutton\shadowPanel\PanelRounded.class
 Menu\UserMenu$2.class
+ViewComponent\ImageTableCellRenderer.class
 calander\ToDay.class
 View\UserDashboard.class
 Table\PanelAction$2.class
