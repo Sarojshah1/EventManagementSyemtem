@@ -1,7 +1,5 @@
 
 package ViewComponent;
-
-import Controller.AdminDashboardController;
 import DAO.Event;
 import Model.EventsModel;
 import java.awt.Graphics2D;

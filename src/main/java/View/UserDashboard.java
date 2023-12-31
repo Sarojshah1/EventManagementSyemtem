@@ -5,6 +5,7 @@ import ViewComponent.DefaultForm;
 import Menu.MenuEvent;
 import ViewComponent.Home_Screen;
 import ViewComponent.HostEvent;
+import ViewComponent.Ticket;
 import java.awt.Component;
 
 
@@ -22,6 +23,7 @@ public class UserDashboard extends javax.swing.JFrame {
                     
                     case 0 -> showForm(new Home_Screen());
                     case 1 -> showForm(new HostEvent());
+                    case 2 -> showForm(new Ticket());
                     case 3 -> dispose();
                     default -> showForm(new DefaultForm("Form : " + index + " " + subIndex));
                 

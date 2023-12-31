@@ -156,6 +156,7 @@ calander\PanelDate$31.class
 com\mycompany\custombutton\shadowPanel\PanelShadow.class
 scrollbar\ModernScrollBarUI.class
 combobox\Combobox$ComboUI$6.class
+ViewComponent\Ticket.class
 Table\TableActionCellEditor.class
 calander\Cell.class
 panel\PanelGradient.class
