@@ -22,7 +22,7 @@ public class UserDashboard extends javax.swing.JFrame {
                     
                     case 0 -> showForm(new Home_Screen());
                     case 1 -> showForm(new HostEvent());
-//                    case 3-> dispose();
+                    case 3 -> dispose();
                     default -> showForm(new DefaultForm("Form : " + index + " " + subIndex));
                 
                 }
@@ -32,9 +32,7 @@ public class UserDashboard extends javax.swing.JFrame {
                 
                             }
 
-            private void dispose() {
-                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-            }
+           
         });
     }
 

@@ -4,11 +4,21 @@
  */
 package View;
 
+import DAO.PaymentDAO;
+import Model.PaymentModel;
+import java.sql.Date;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Lenovo
  */
 public class Payment extends javax.swing.JFrame {
+    DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     /**
      * Creates new form Panel
@@ -29,10 +39,10 @@ public class Payment extends javax.swing.JFrame {
 
         customJPanel1 = new com.mycompany.custombutton.CustomJPanel();
         jLabel1 = new javax.swing.JLabel();
-        textField1 = new com.mycompany.custombutton.TextField();
-        textField2 = new com.mycompany.custombutton.TextField();
-        textField3 = new com.mycompany.custombutton.TextField();
-        textField4 = new com.mycompany.custombutton.TextField();
+        cvc = new com.mycompany.custombutton.TextField();
+        cardnumber = new com.mycompany.custombutton.TextField();
+        date = new com.mycompany.custombutton.TextField();
+        name = new com.mycompany.custombutton.TextField();
         customButton1 = new com.mycompany.custombutton.CustomButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -46,13 +56,13 @@ public class Payment extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Downloads\\paymentcard2.png")); // NOI18N
 
-        textField1.setLabelText("CVC");
+        cvc.setLabelText("CVC");
 
-        textField2.setLabelText("Card Number");
+        cardnumber.setLabelText("Card Number");
 
-        textField3.setLabelText("Expirt Date");
+        date.setLabelText("Expirt Date");
 
-        textField4.setLabelText("Card Holder Name");
+        name.setLabelText("Card Holder Name");
 
         customButton1.setText("Pay Now");
         customButton1.setcolor(new java.awt.Color(102, 255, 102));
@@ -72,15 +82,15 @@ public class Payment extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addGroup(customJPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(customJPanel1Layout.createSequentialGroup()
-                        .addComponent(textField3, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(customJPanel1Layout.createSequentialGroup()
-                        .addComponent(textField4, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(39, Short.MAX_VALUE))
+                        .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(45, Short.MAX_VALUE))
                     .addGroup(customJPanel1Layout.createSequentialGroup()
-                        .addComponent(textField2, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cardnumber, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cvc, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(21, 21, 21))))
             .addGroup(customJPanel1Layout.createSequentialGroup()
                 .addGroup(customJPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,12 +109,12 @@ public class Payment extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(customJPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cvc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cardnumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
-                .addComponent(textField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(textField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45)
                 .addComponent(customButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(30, Short.MAX_VALUE))
@@ -116,8 +126,7 @@ public class Payment extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(customJPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(customJPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,11 +136,22 @@ public class Payment extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void customButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customButton1ActionPerformed
         // TODO add your handling code here:
+        LocalDate localDate = LocalDate.parse(date.getText(), dateFormatter);
+        Date expiryDate = java.sql.Date.valueOf(localDate.atStartOfDay().toLocalDate());
+        PaymentModel model=new PaymentModel(cardnumber.getText(),Integer.parseInt(cvc.getText()),name.getText(),expiryDate);
+        PaymentDAO dao=new PaymentDAO();
+        try {
+            dao.payment(model);
+            
         dispose(); 
+        } catch (SQLException ex) {
+            Logger.getLogger(Payment.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_customButton1ActionPerformed
 
     /**
@@ -171,12 +191,12 @@ public class Payment extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.mycompany.custombutton.TextField cardnumber;
     private com.mycompany.custombutton.CustomButton customButton1;
     private com.mycompany.custombutton.CustomJPanel customJPanel1;
+    private com.mycompany.custombutton.TextField cvc;
+    private com.mycompany.custombutton.TextField date;
     private javax.swing.JLabel jLabel1;
-    private com.mycompany.custombutton.TextField textField1;
-    private com.mycompany.custombutton.TextField textField2;
-    private com.mycompany.custombutton.TextField textField3;
-    private com.mycompany.custombutton.TextField textField4;
+    private com.mycompany.custombutton.TextField name;
     // End of variables declaration//GEN-END:variables
 }

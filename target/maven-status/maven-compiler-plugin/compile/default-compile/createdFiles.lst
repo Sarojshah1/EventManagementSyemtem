@@ -2,7 +2,6 @@ Shadow\ShadowRenderer.class
 calander\PanelSlide.class
 View\Dashboard$2.class
 com\mycompany\custombutton\shadowPanel\ShadowType.class
-ViewComponent\Home_Screen$3.class
 DAO\Event.class
 panel\PanelGradient$GradientType.class
 database\DbConnection.class
@@ -32,6 +31,7 @@ calander\PanelDate$26.class
 ViewComponent\HostEvent$3.class
 combobox\Combobox$ComboUI$4.class
 Model\AdminDashboardModel.class
+Model\PaymentModel.class
 View\SignUpPage$3.class
 panel\PanelShadow$GradientType.class
 spline\Spline.class
@@ -93,6 +93,7 @@ Chart\CurveLineChart$3.class
 com\mycompany\custombutton\PasswordField.class
 com\mycompany\custombutton\PasswordField$2.class
 Model\AllId.class
+DAO\PaymentDAO.class
 View\LoginPage$2.class
 calander\PanelDate$17.class
 calander\PanelDate$4.class

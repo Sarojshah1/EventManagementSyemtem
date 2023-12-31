@@ -6,7 +6,7 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -26,7 +26,6 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="customJPanel1" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -58,17 +57,17 @@
                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="textField3" min="-2" pref="257" max="-2" attributes="0"/>
+                          <Component id="date" min="-2" pref="257" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="textField4" min="-2" pref="393" max="-2" attributes="0"/>
-                          <EmptySpace pref="39" max="32767" attributes="0"/>
+                          <Component id="name" min="-2" pref="393" max="-2" attributes="0"/>
+                          <EmptySpace pref="45" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="textField2" min="-2" pref="257" max="-2" attributes="0"/>
+                          <Component id="cardnumber" min="-2" pref="257" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="textField1" min="-2" pref="109" max="-2" attributes="0"/>
+                          <Component id="cvc" min="-2" pref="109" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -95,13 +94,13 @@
                   <Component id="jLabel1" min="-2" pref="156" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="textField1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="textField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cvc" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cardnumber" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                  <Component id="textField4" min="-2" max="-2" attributes="0"/>
+                  <Component id="name" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="textField3" min="-2" max="-2" attributes="0"/>
+                  <Component id="date" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                   <Component id="customButton1" min="-2" pref="47" max="-2" attributes="0"/>
                   <EmptySpace pref="30" max="32767" attributes="0"/>
@@ -118,22 +117,22 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="com.mycompany.custombutton.TextField" name="textField1">
+        <Component class="com.mycompany.custombutton.TextField" name="cvc">
           <Properties>
             <Property name="labelText" type="java.lang.String" value="CVC"/>
           </Properties>
         </Component>
-        <Component class="com.mycompany.custombutton.TextField" name="textField2">
+        <Component class="com.mycompany.custombutton.TextField" name="cardnumber">
           <Properties>
             <Property name="labelText" type="java.lang.String" value="Card Number"/>
           </Properties>
         </Component>
-        <Component class="com.mycompany.custombutton.TextField" name="textField3">
+        <Component class="com.mycompany.custombutton.TextField" name="date">
           <Properties>
             <Property name="labelText" type="java.lang.String" value="Expirt Date"/>
           </Properties>
         </Component>
-        <Component class="com.mycompany.custombutton.TextField" name="textField4">
+        <Component class="com.mycompany.custombutton.TextField" name="name">
           <Properties>
             <Property name="labelText" type="java.lang.String" value="Card Holder Name"/>
           </Properties>

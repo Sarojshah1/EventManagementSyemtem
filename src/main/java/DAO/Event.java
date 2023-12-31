@@ -44,7 +44,6 @@ try (PreparedStatement preparedStatement = connection.prepareStatement(query,Pre
                 if (generatedKeys.next()) {
                     int EventId = generatedKeys.getInt(1);
                     System.out.println("Generated ID: " + EventId);
-                    AllId.EventId=EventId;
                     // You can set the generated ID wherever you need, e.g., event.setId(generatedId);
                 } else {
                     System.err.println("Failed to retrieve the generated ID.");

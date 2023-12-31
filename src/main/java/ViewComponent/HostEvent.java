@@ -247,10 +247,7 @@ public class HostEvent extends javax.swing.JPanel {
     private void createEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createEventActionPerformed
         // TODO add your handling code here:
         try {
-        // Your existing code here
-        int price1 = Integer.parseInt(price.getText());
 
-        // Convert ImageIcon to Image and then to byte array
         ImageIcon icon = (ImageIcon) image.getIcon();
         Image img = icon.getImage();
         byte[] imageBytes = convertImageToByteArray(img);
@@ -258,17 +255,18 @@ public class HostEvent extends javax.swing.JPanel {
         Event cre=new Event();
         cre.CreateEvent(event);
     } catch (NumberFormatException e) {
-        // Handle the case where the input for price is not a valid integer
         System.err.println("Invalid price input: " + e.getMessage());
-        // You might want to display an error message to the user
     } catch (Exception e) {
         // Handle other exceptions
         e.printStackTrace();
     }
-//    name.setText("");
-//    image.setText("");
-//    address.setText("");
-//    price.setText("");
+    EventName.setText("");
+    Descrition.setText("");
+    image.setText("");
+    price.setText("");
+    venue.setText("");
+    capacity.setText("");
+    date.setText("");
 
     }                                           
     private byte[] convertImageToByteArray(Image image) {

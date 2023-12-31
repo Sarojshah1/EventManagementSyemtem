@@ -4,6 +4,8 @@
  */
 package ViewComponent;
 
+import DAO.PaymentDAO;
+import Model.AllId;
 import Table.TableActionCellEditor;
 import Table.TableActionCellRender;
 import Table.TableActionEvent;
@@ -28,15 +30,11 @@ public class Home_Screen extends javax.swing.JPanel {
     public Home_Screen() {
 //        init();
         initComponents();
-        TableActionEvent event = new TableActionEvent(){
-            @Override
-            public void onClick(int row,int id) {
-                System.out.println("Edit row : " + row+id);
-                Payment pay = new Payment();
-                pay.setVisible(true);
-                
-            }
-            
+        TableActionEvent event = (int row, int id) -> {
+            PaymentDAO dao=new PaymentDAO();
+            dao.insertdata(id);        
+            Payment pay = new Payment();
+            pay.setVisible(true);
         };
         table.getColumnModel().getColumn(7).setCellRenderer(new TableActionCellRender());
         table.getColumnModel().getColumn(7).setCellEditor(new TableActionCellEditor(event));
