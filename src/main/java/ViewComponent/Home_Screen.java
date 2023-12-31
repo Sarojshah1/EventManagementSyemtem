@@ -24,15 +24,14 @@ import javax.swing.table.DefaultTableModel;
 
 public class Home_Screen extends javax.swing.JPanel {
     private DefaultTableModel model;
-    private ResultSet result;
 
     public Home_Screen() {
 //        init();
         initComponents();
         TableActionEvent event = new TableActionEvent(){
             @Override
-            public void onClick(int row) {
-                System.out.println("Edit row : " + row);
+            public void onClick(int row,int id) {
+                System.out.println("Edit row : " + row+id);
                 Payment pay = new Payment();
                 pay.setVisible(true);
                 

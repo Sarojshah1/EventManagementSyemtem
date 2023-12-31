@@ -131,6 +131,7 @@ public class Payment extends javax.swing.JFrame {
 
     private void customButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customButton1ActionPerformed
         // TODO add your handling code here:
+        dispose(); 
     }//GEN-LAST:event_customButton1ActionPerformed
 
     /**

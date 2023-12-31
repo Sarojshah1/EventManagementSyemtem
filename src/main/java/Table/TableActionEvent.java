@@ -3,6 +3,6 @@ package Table;
 
 
 public interface TableActionEvent {
-      public void onClick(int row);
+      public void onClick(int row,int id);
     
 }

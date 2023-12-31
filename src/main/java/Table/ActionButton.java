@@ -17,7 +17,7 @@ public class ActionButton extends JButton {
     
     public ActionButton(){
         setContentAreaFilled(false);
-        setBorder(new EmptyBorder(4,3,4,3));
+        setBorder(new EmptyBorder(10,20,10,20));
         addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent me) {
