@@ -30,9 +30,10 @@ public class Ticket extends javax.swing.JPanel {
         init();
     }
     private void init() {
+        System.out.println(AllId.userId);
         DatabaseConnection conn = new DatabaseConnection();
         model = (DefaultTableModel) table.getModel();
-        String query = "SELECT et.ID AS TicketID, e.IMAGE,e.NAME,e.DESCRIPTION,e.PLACE,e.date, e.PRICE,et.PAIDDATE FROM events e JOIN eventticket et ON e.ID = et.EVENTID WHERE et.`ISPAID` = 1 and USERID='"+AllId.userId+"'";
+        String query = "SELECT et.ID AS TicketID, e.IMAGE,e.NAME,e.DESCRIPTION,e.PLACE,e.date, e.PRICE,et.PAIDDATE FROM events e JOIN eventticket et ON e.ID = et.EVENTID WHERE et.ISPAID = 1 and OWNERID='"+AllId.userId+"'";
         model.setRowCount(0);
         try (ResultSet resultSet = conn.retrive(query)) {
             while (resultSet.next()) {
