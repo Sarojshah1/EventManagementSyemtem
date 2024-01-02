@@ -39,17 +39,15 @@ public class Dashboard extends javax.swing.JFrame {
                            Login.setVisible(true);
                            Login.pack();
                            Login.setLocationRelativeTo(null);
-                           this.dispose();
-//                    Dashboard.dispose();
+                           dispose();
+//                    Dashboarddispose();
                        }
                        default -> showForm(new DefaultForm("Form : " + index + " " + subIndex));
                 }
 //                    case 4, 1-> showForm(new EventDetails());
                             }
 
-            private void dispose() {
-                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-            }
+           
         });
     }
 

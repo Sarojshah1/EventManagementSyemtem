@@ -55,7 +55,6 @@ calander\PanelDate$8.class
 Table\PanelAction.class
 scrollbar\ScrollBarCustom.class
 ViewComponent\EventDetails.class
-View\UserDashboard$2.class
 Menu\UserMenu$1.class
 Table\TableActionCellRender.class
 Menu\UserMenu.class
@@ -174,6 +173,7 @@ Effect\RippleEffect$Effect$1.class
 Model\venue.class
 com\mycompany\custombutton\TextField$3.class
 Chart\CurveLineChart.class
+DAO\AdminBookingDAO.class
 blankchart\BlankPlotChart$1.class
 panel\PanelShadow.class
 ViewComponent\AddVenue.class

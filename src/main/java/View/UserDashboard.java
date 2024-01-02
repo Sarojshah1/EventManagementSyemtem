@@ -14,27 +14,23 @@ public class UserDashboard extends javax.swing.JFrame {
     // make userid
     public UserDashboard() { // ask for userid and pass in event
         initComponents();
-        userMenu1.setEvent(new MenuEvent() {
-            
-            @Override
-            public void selected(int index, int subIndex) {
-              
-                switch (index){
-                    
-                    case 0 -> showForm(new Home_Screen());
-                    case 1 -> showForm(new HostEvent());
-                    case 2 -> showForm(new Ticket());
-                    case 3 -> dispose();
-                    default -> showForm(new DefaultForm("Form : " + index + " " + subIndex));
+        userMenu1.setEvent((int index, int subIndex) -> {
+            switch (index){
                 
+                case 0 -> showForm(new Home_Screen());
+                case 1 -> showForm(new HostEvent());
+                case 2 -> showForm(new Ticket());
+                case 3 ->{
+                    LoginPage Login=new LoginPage();
+                    Login.setVisible(true);
+                    Login.pack();
+                    Login.setLocationRelativeTo(null);
+                    dispose();
+//                    Dashboarddispose();
                 }
-
+                default -> showForm(new DefaultForm("Form : " + index + " " + subIndex));
                 
-           
-                
-                            }
-
-           
+            }
         });
     }
 
