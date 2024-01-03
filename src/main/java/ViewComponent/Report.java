@@ -18,7 +18,6 @@ public class Report extends javax.swing.JPanel {
      */
     public Report() {
         initComponents();
-//        getContentPane().setBackground(new Color(250, 250, 250));
         chart.addLegend("Income", new Color(245, 189, 135));
         chart.addLegend("Expense", new Color(135, 189, 245));
         chart.addLegend("Profit", new Color(189, 135, 245));

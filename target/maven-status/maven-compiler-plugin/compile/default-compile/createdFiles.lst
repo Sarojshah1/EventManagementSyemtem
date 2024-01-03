@@ -30,7 +30,6 @@ calander\PanelSlide$AnimateType.class
 Chart\CurveLineChart$4.class
 Menu\MenuItem.class
 calander\PanelDate$26.class
-View\Report.class
 ViewComponent\HostEvent$3.class
 combobox\Combobox$ComboUI$4.class
 Model\AdminDashboardModel.class
@@ -83,7 +82,6 @@ Shadow\GraphicsUtilities.class
 ViewComponent\Header.class
 combobox\Combobox$ComboUI$3.class
 spline\SplinePoint.class
-View\Report$2.class
 ViewComponent\UserProfile$1.class
 Table\TableActionEvent.class
 View\LoginPage$3.class
@@ -103,7 +101,6 @@ com\mycompany\custombutton\PasswordField.class
 com\mycompany\custombutton\PasswordField$2.class
 Model\AllId.class
 DAO\PaymentDAO.class
-View\Report$1.class
 View\LoginPage$2.class
 calander\PanelDate$17.class
 calander\PanelDate$4.class
@@ -122,6 +119,7 @@ database\MySqlConnection.class
 Session.class
 Shadow\GraphicsUtilities_1.class
 Shadow\ShadowRenderer_1.class
+ViewComponent\ChangePassword.class
 combobox\Combobox$ComboUI$2.class
 calander\PanelDate$15.class
 Table\ActionButton$1.class
@@ -134,12 +132,14 @@ Menu\MenuAnimation$1.class
 calander\PanelDate$35.class
 Chart\CurveLineChart$1.class
 com\mycompany\custombutton\CustomButton.class
+ViewComponent\ChangePassword$1.class
 calander\PanelDate$6.class
 blankchart_bargraph\BlankPlotChatRender.class
 com\mycompany\custombutton\shadowPanel\PictureBox.class
 Menu\MenuAnimation.class
 Model\EventsModel.class
 View\SignUpPage$5.class
+ViewComponent\ChangePassword$2.class
 ViewComponent\HomeForm.class
 calander\CalenderCustom$3.class
 Chart\LabelColor.class
