@@ -6,6 +6,7 @@ import Menu.MenuEvent;
 import ViewComponent.Home_Screen;
 import ViewComponent.HostEvent;
 import ViewComponent.Ticket;
+import ViewComponent.UserProfile;
 import java.awt.Component;
 
 
@@ -20,7 +21,8 @@ public class UserDashboard extends javax.swing.JFrame {
                 case 0 -> showForm(new Home_Screen());
                 case 1 -> showForm(new HostEvent());
                 case 2 -> showForm(new Ticket());
-                case 3 ->{
+                case 3->showForm(new UserProfile());
+                case 4 ->{
                     LoginPage Login=new LoginPage();
                     Login.setVisible(true);
                     Login.pack();

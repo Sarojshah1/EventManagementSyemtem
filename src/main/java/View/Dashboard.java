@@ -7,6 +7,7 @@ import Menu.MenuEvent;
 import ViewComponent.AddVenue;
 import ViewComponent.Booking;
 import ViewComponent.EventDetails;
+import ViewComponent.Report;
 import ViewComponent.venuedetails;
 import java.awt.Component;
 
@@ -23,6 +24,7 @@ public class Dashboard extends javax.swing.JFrame {
                 
                 switch (index) {
                     case 0 -> showForm(new HomeForm());
+                    case 1 -> showForm(new Report());
                     case 2-> showForm(new Booking());
                     case 3 -> {
                         if(subIndex==2){

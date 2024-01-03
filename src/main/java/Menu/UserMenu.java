@@ -33,6 +33,7 @@ public class UserMenu extends JComponent{
             {"Home"},
             {"Host Event"},
             {"Tickets"},
+            {"Profile"},
             {"LogOut"}
                 
         };

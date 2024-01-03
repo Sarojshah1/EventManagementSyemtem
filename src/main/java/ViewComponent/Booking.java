@@ -6,13 +6,11 @@ package ViewComponent;
 
 import Model.AllId;
 import database.DatabaseConnection;
-import java.sql.Blob;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
-import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 
 /**
