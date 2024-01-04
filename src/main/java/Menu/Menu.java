@@ -35,6 +35,7 @@ public class Menu extends JComponent{
             {"Booking"},
             {"Venues","Add Venues","Venue Details"},
             {"Events"},
+            {"Calander"},
             {"LogOut"}
                 
         };

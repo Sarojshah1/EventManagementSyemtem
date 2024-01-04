@@ -6,6 +6,7 @@ import ViewComponent.HomeForm;
 import Menu.MenuEvent;
 import ViewComponent.AddVenue;
 import ViewComponent.Booking;
+import ViewComponent.Calander;
 import ViewComponent.EventDetails;
 import ViewComponent.Report;
 import ViewComponent.venuedetails;
@@ -35,8 +36,8 @@ public class Dashboard extends javax.swing.JFrame {
                         }
                     }
                     case 4 -> showForm(new EventDetails());                 
-                   
-                       case 5->{
+                   case 5 ->showForm(new Calander());
+                       case 6->{
                            LoginPage Login=new LoginPage();
                            Login.setVisible(true);
                            Login.pack();

@@ -42,6 +42,7 @@ View\Dashboard.class
 calander\PanelDate$13.class
 View\Payment.class
 combobox\Combobox$ComboUI$5.class
+ViewComponent\Calander.class
 com\mycompany\custombutton\CustomButton$1.class
 calander\PanelSlide$2.class
 calander\PanelDate$25.class
