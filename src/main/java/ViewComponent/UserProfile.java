@@ -148,6 +148,11 @@ private void profiledetails() {
         change1.setText("Change Password");
         change1.setcolor(new java.awt.Color(153, 255, 255));
         change1.setRadius(40);
+        change1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                change1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout customJPanel1Layout = new javax.swing.GroupLayout(customJPanel1);
         customJPanel1.setLayout(customJPanel1Layout);
@@ -257,6 +262,16 @@ JFileChooser chooser=new JFileChooser();
         p.profiledetails(imageBytes);
 
     }//GEN-LAST:event_changeActionPerformed
+
+    private void change1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_change1ActionPerformed
+        // TODO add your handling code here:
+        ChangePassword changed=new ChangePassword();
+        changed.setVisible(true);
+        changed.pack();
+        changed.setLocationRelativeTo(null);
+        
+  
+    }//GEN-LAST:event_change1ActionPerformed
 private byte[] convertImageToByteArray(Image image) {
     ByteArrayOutputStream baos = new ByteArrayOutputStream();
     try {
